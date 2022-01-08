@@ -1,1 +1,12 @@
-<iframe src="https://+ site +" title="Web page viewer for BiB"></iframe>
+<?php
+$result=mysql_query("SELECT * from `Data`  where site = $site")
+$info = mysql_fetch_array( $result );
+$Emp_ID=$info['site'];
+?>
+
+<html>
+<body>
+
+<input  name="emp_number" value=<?php echo <iframe src="https://$site" title="Web page viewer for BiB"></iframe> ?>/>
+<input name='emp_name' value="<?php echo (isset($site) ? htmlspecialchars($site) : ''); ?>" />
+<input name='emp_name'<?php echo (isset($Emp_ID)) ? ('value = "'.site.'"') : "value = \"\""; ?>/>
